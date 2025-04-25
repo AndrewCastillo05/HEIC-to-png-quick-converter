@@ -1,3 +1,5 @@
+REM this program is inteded to convert proprietary apple image formats to PNG files quickly and using strictly free and open-source methods
+REM 
 @echo off
 cls & color 0B
 Mode con cols=90 lines=10
