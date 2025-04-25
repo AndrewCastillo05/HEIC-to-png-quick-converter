@@ -5,7 +5,8 @@ Mode con cols=90 lines=10
 goto:main
 
 :FullCopyrightInfo
-ECHO this program is inteded to convert proprietary apple image formats to PNG files quickly and using strictly free and open-source methods
+ECHO this program is inteded to convert proprietary apple image formats to PNG files
+ECHO quickly and using strictly free and open-source methods
 ECHO Copyright (C) 2025 Andrew Castillo
 pause
 cls
@@ -29,7 +30,7 @@ ECHO You can contact myself by leaving a message on the github repo for this
 ECHO project found at https://github.com/AndrewCastillo05/HEIC-to-png-quick-converter
 ECHO or via email at andrew.castillo05169@gmail.com
 cls
-goto:eof
+goto:disp
 
 
 :QuickCopyrightInfo
@@ -58,22 +59,26 @@ IF EXIST "%Location%\%FileName%" ( color 0A && echo ImageMagick is installed
     color 0B & echo ImageMagick Installed
     pause
 )
-goto: display
+goto:disp
 
 :disp
-ECHO *************************************************************************************
+cls
+ECHO ************************************************************************************
 ECHO HEIC to PNG Quick Converter V 1.0
 ECHO what would you like to do?
 ECHO [1] - convert this directory
 ECHO [2] - view copyright
 ECHO [3] - exit program
-set /P userInput="Choice: "
-IF userInput EQU 1 (
+ECHO: 
+ECHO: 
+ECHO ************************************************************************************
+set /P userInput=""
+IF %userInput% EQU 1 (
     goto:convertFiles
-) ELSE IF userInput EQU 2 (
+) ELSE IF %userInput% EQU 2 (
     goto:FullCopyrightInfo
-) ELSE IF userInput EQU 3 (
-    EXIT /b 0
+) ELSE IF %userInput% EQU 3 (
+    EXIT /B 0
 ) ELSE (
     Echo Please enter a valid number
     pause
